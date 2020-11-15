@@ -29,10 +29,7 @@ jobs:
       run: dotnet build --configuration Release
 
     - name: Test
-      uses: ./Test/ # Uses an action in the root directory
-      id: dotnet-test
-      with:
-        sln-path: '/github/workspace/Reservation2.sln'
+      run: dotnet test 
 
     - name: dotnet publish
       run: dotnet publish -c Release -o ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp
