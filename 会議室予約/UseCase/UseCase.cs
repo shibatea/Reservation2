@@ -22,13 +22,13 @@ namespace 会議室予約.UseCase
         {
             try
             {
-                var よやく = new 予約(request.よやくしゃ,
-                    request.りようきかん,
-                    request.かいぎしつ,
-                    request.かいぎさんかよていしゃ,
-                    new 予約可能ルール());
+                // var よやく = new 予約(request.よやくしゃ,
+                //     request.りようきかん,
+                //     request.かいぎしつ,
+                //     request.かいぎさんかよていしゃ,
+                //     new 予約可能ルール());
                             
-                await _repository.Add(よやく);
+                // await _repository.Add(よやく);
             }
             catch (ルール違反Exception ex)
             {  
@@ -40,15 +40,15 @@ namespace 会議室予約.UseCase
         }
 
 
-        public async Task 予約をキャンセルする(予約Id 予約Id, 予約をキャンセルする人のId 予約をキャンセルする人のID) {
-            //var 予約の一覧 = _repository.FetchAll();
-
-            var domainService = new 予約キャンセルDomainService();
-            if (await domainService.キャンセルできるか(予約Id, 予約をキャンセルする人のID)) {
-
-                var 予約 = _repository.Get(予約Id);
-                _repository.RemoveBy(予約Id);
-            }
-        }
+        // public async Task 予約をキャンセルする(予約Id 予約Id, 予約をキャンセルする人のId 予約をキャンセルする人のID) {
+        //     //var 予約の一覧 = _repository.FetchAll();
+        //
+        //     var domainService = new 予約キャンセルDomainService();
+        //     if (await domainService.キャンセルできるか(予約Id, 予約をキャンセルする人のID)) {
+        //
+        //         var 予約 = _repository.Get(予約Id);
+        //         _repository.RemoveBy(予約Id);
+        //     }
+        // }
     }
 }

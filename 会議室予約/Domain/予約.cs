@@ -14,7 +14,7 @@ namespace 会議室予約.Domain
         private 会議室Id かいぎしつ;
         // TODO: ファーストコレクションかな
         private 会議参加予定者 かいぎさんかよていしゃ;
-        private 予約ステータス すてーたす;
+        // private 予約ステータス すてーたす;
 
         public 予約(予約者Id よやくしゃ, 利用期間 りようきかん, 会議室Id かいぎしつ, 会議参加予定者 かいぎさんかよていしゃ)
         {
@@ -36,16 +36,16 @@ namespace 会議室予約.Domain
             return りようきかん.りようじかんたい();
         }
 
-        public 予約 変更する(予約Id 予約Id, 予約者Id 予約者Id, 利用期間 利用期間, 会議室Id 会議室Id, 会議参加予定者 会議参加予定者)
-        {
-            if (!new 予約変更可能ルール().IsSatisfied(りようきかん))
-            {
-                throw new ルール違反Exception("おまえ、値ちがうんやで2");
-            }
-
-
-            return new 予約(予約Id, 予約者Id, 利用期間, 会議室Id, 会議参加予定者);
-        }
+        // public 予約 変更する(予約Id 予約Id, 予約者Id 予約者Id, 利用期間 利用期間, 会議室Id 会議室Id, 会議参加予定者 会議参加予定者)
+        // {
+        //     if (!new 予約変更可能ルール().IsSatisfied(りようきかん))
+        //     {
+        //         throw new ルール違反Exception("おまえ、値ちがうんやで2");
+        //     }
+        //
+        //
+        //     return new 予約(予約Id, 予約者Id, 利用期間, 会議室Id, 会議参加予定者);
+        // }
 
 
     }
